@@ -68,6 +68,24 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <?php the_content(); ?>
+
+                        <dl>
+                            <dt>使用ツール</dt>
+                            <!-- <?php
+                            $tool = get_post_meta(get_the_ID(), "使用ツール", true);
+                            ?>
+                            <dd><?php echo $tool ?></dd> -->
+                            <dd><?php the_field("使用ツール") ?></dd>
+
+                            <dt>使用言語</dt>
+                        
+                            <dd><?php the_field("使用言語") ?></dd>
+
+                            <dt>制作日</dt>
+                            <dd><?php echo the_field('制作日');?></dd>
+                        </dl>
+
+
                     </div>
                 </div>
             </div>
