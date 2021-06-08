@@ -56,7 +56,7 @@
         <article class="mb-4">
             <div class="container px-4 px-lg-5">
 
-            <h1><?php the_title(); ?></h1>
+
 
                         <!-- <?php print_r(get_field("トップ画像")); ?>  -->
                        <div class="top_Area">
@@ -71,6 +71,12 @@
                             </div>
 
                             <div class="top_textArea">
+                                
+
+                            <h1><?php the_title(); ?></h1>
+                            <hr>
+                            <p><?php the_field("コメント"); ?></p>
+
                                 <dl>
                                     <dt>使用ツール</dt>
                                     <!-- <?php
