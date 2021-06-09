@@ -1,0 +1,80 @@
+body {
+  font-family: "Raleway", "游ゴシック", sans-serif;
+  color: #333;
+}
+
+h1 {
+  font-size: calc(1.375rem + 1.5vw);
+}
+
+h2 {
+  font-size: calc(1.325rem + 0.9vw);
+}
+
+h3 {
+  font-size: calc(1.3rem + 0.6vw);
+}
+
+h4 {
+  font-size: calc(1.275rem + 0.3vw);
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+p {
+  font-size: 1rem;
+}
+
+/* 制作ページ用 */
+
+.worksHeader {
+  background-color: rgb(60, 159, 189);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 3rem;
+  padding-top: calc(4rem + 57px);
+  padding-bottom: 4rem;
+  /* background: no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll; */
+  color: #fff;
+}
+.worksHeader p {
+  margin-top: 16px;
+}
+
+/* ------------------------ */
+/*　　　　  説明部分　　　　　*/
+/* ----------------------- */
+
+/* レイアウト */
+.top_Area {
+  display: flex;
+  width: 100%;
+}
+
+.top_imgArea {
+  width: 50%;
+}
+
+.top_imgArea > img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.top_textArea {
+  padding: 16px;
+  width: 50%;
+}
+
+.top_textArea h1 {
+  font-size: 1.6rem;
+}

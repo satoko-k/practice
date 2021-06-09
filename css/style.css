@@ -1,0 +1,346 @@
+@charset "utf-8";
+
+body {
+  font-family: "Raleway", "游ゴシック", sans-serif;
+  color: #333;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+a:hover {
+  text-decoration: none;
+  color: #333;
+}
+
+/* ヘッダーとナビ */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid #ccc;
+  opacity: 0;
+  transform: translateY(-100%); /* 要素自身の100% */
+}
+
+header.active {
+  opacity: 1;
+  transition: 0.5s;
+  transform: none;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+}
+nav ul li {
+  margin-right: 20px;
+}
+nav ul li:not(:first-of-type) {
+  margin-left: 15px;
+}
+
+header h1 {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+/* ファーストビューの部分 */
+#firstView {
+  height: 85vh;
+  background-color: rgb(60, 159, 189);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: -20px;
+}
+
+.textAnimation {
+  color: #fff;
+  font-size: 70px;
+  letter-spacing: 0.1em;
+}
+.textAnimation.subtitle {
+  font-size: 35px;
+}
+
+.textAnimation:not(:first-of-type) {
+  margin-top: 20px;
+}
+
+@keyframes ShowTextFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes ShowTextFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.textAnimation span {
+  display: inline-block;
+  animation: ShowText 1s backwards;
+}
+
+.textAnimation span:nth-of-type(odd) {
+  animation: ShowTextFromTop ease-out 1s backwards;
+}
+
+.textAnimation span:nth-of-type(even) {
+  animation: ShowTextFromBottom ease-out 1s backwards;
+}
+
+/* 大枠のレイアウト */
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+section {
+  padding: 40px 0;
+}
+section.works {
+  background-color: rgb(204, 225, 231);
+}
+
+.inner {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* About */
+.about {
+  border-radius: 5%;
+  margin: 50px auto;
+}
+h2 {
+  margin: 20px auto 30px;
+  text-align: center;
+  font-size: 4rem;
+}
+.about-box {
+  display: flex;
+  align-items: center;
+}
+.about h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: rgb(60, 159, 189);
+}
+.about p {
+  line-height: 1.7;
+}
+.about img {
+  padding: 20px;
+  border-radius: 50%;
+  width: 50%;
+}
+.about h2,
+.about img,
+.about h3,
+.about p,
+.works h2,
+.works img,
+.works h3,
+.works p {
+  transform: rotateY(20px);
+  opacity: 0;
+}
+
+.about .show h2,
+.works .show h2 {
+  transform: none;
+  opacity: 1;
+  transition: 1s;
+}
+.about .show img,
+.about .show h3,
+.about .show p,
+.works .show img,
+.works .show h3,
+.works .show p {
+  transform: none;
+  opacity: 1;
+  transition: 1s 0.5s;
+}
+.more {
+  margin-top: 5px;
+  display: block;
+  text-align: right;
+}
+.more a {
+  color: #fff;
+  background-color: rgb(148, 200, 216);
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+/* Works */
+
+.workList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.workItem {
+  width: 32%;
+}
+
+.work-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.work-info {
+  font-size: 12px;
+}
+
+.work-img {
+  width: 90%;
+  border-radius: 5px;
+}
+
+.works .more {
+  margin-top: 30px;
+  display: block;
+  text-align: center;
+}
+
+/* Contact */
+
+.contact {
+  text-align: center;
+}
+p.btn_to_form {
+  background-color: #43b887;
+  display: inline-block;
+  padding: 20px 40px;
+  border-radius: 5px;
+  margin: 30px;
+}
+p.btn_to_form:hover {
+  background-color: #70daad;
+}
+p.btn_to_form a {
+  color: #fff;
+}
+
+/* ページトップへ */
+.pagetop {
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #8ad0e2;
+}
+
+.fa,
+.fa-chevron-up {
+  color: #fff;
+}
+/* footer */
+
+.footer {
+  padding: 30px 0;
+  background-color: rgb(97, 173, 194);
+}
+.copyright {
+  text-align: center;
+  color: #fff;
+}
+
+/*media Queries 767
+----------------------------------------------------*/
+@media screen and (max-width: 767px) {
+  /* firstView */
+  .textAnimation {
+    font-size: 50px;
+    letter-spacing: 0.1em;
+  }
+  .textAnimation.subtitle {
+    font-size: 25px;
+  }
+
+  /* レイアウト */
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .inner {
+    padding: 0 20px;
+  }
+
+  /* Works */
+  .work-title {
+    font-size: 10px;
+  }
+
+  .workList {
+    justify-content: space-between;
+  }
+
+  .workItem {
+    flex: 0 0 48%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+/*media Queries 520
+----------------------------------------------------*/
+@media screen and (max-width: 520px) {
+  /* firstView */
+  .textAnimation {
+    font-size: 40px;
+    letter-spacing: 0.1em;
+  }
+  .textAnimation.subtitle {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  /* about */
+  .about-box {
+    display: block;
+    text-align: center;
+  }
+  .about h3 {
+    text-align: center;
+  }
+
+  .about img {
+    padding: 20px;
+    width: 90%;
+  }
+}
