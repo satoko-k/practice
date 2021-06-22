@@ -22,7 +22,7 @@
   </head>
   <body>
     <header id="header">
-      <h1>SATOKO ISHIDA</h1>
+      <h1>SATOKO TEST</h1>
 
       <nav>
         <ul>
